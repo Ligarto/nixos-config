@@ -5,6 +5,6 @@
   environment.systemPackages = with pkgs; [
     fastfetch
     xwayland-satellite
-    nerd-fonts-jetbrains-mono
+    nerd-fonts.jetbrains-mono
   ];
 }
