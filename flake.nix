@@ -26,6 +26,7 @@
       specialArgs = { inherit niri noctalia; };
       modules = [
         ./configuration.nix
+	./programs.nix
         niri.nixosModules.niri
         home-manager.nixosModules.home-manager
         {
