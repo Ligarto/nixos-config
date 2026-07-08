@@ -5,8 +5,8 @@
   home.stateVersion = "26.05";
 
   imports = [
-    ./niri.nix
-    ./noctalia.nix
+    ./niri
+    ./noctalia
   ];
 
   programs.home-manager.enable = true;
