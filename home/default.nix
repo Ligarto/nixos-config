@@ -13,6 +13,7 @@
     ./noctalia
     ./neovim
     ./kitty.nix
+    ./theme.nix
   ];
 
   programs.home-manager.enable = true;

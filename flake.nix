@@ -25,31 +25,39 @@
     };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    home-manager,
-    niri,
-    noctalia,
-    nvf,
-    ...
-  }: {
-    nixosConfigurations.old-laptop = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = {inherit niri noctalia nvf;};
-      modules = [
-        ./configuration.nix
-        ./programs.nix
-        niri.nixosModules.niri
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = {inherit niri noctalia nvf;};
-          home-manager.users.ligarto = import ./home/default.nix;
-          home-manager.backupFileExtension = "bak";
-        }
-      ];
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      niri,
+      noctalia,
+      nvf,
+      ...
+    }:
+    {
+      nixosConfigurations.old-laptop = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit niri noctalia nvf; };
+        modules = [
+          ./configuration.nix
+          ./programs.nix
+          ./browser-policies.nix
+          {
+            nixpkgs.overlays = [
+              (final: prev: { brave-origin = final.callPackage ./pkgs/brave-origin.nix { }; })
+            ];
+          }
+          niri.nixosModules.niri
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit niri noctalia nvf; };
+            home-manager.users.ligarto = import ./home/default.nix;
+            home-manager.backupFileExtension = "bak";
+          }
+        ];
+      };
     };
-  };
 }

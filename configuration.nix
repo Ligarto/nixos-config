@@ -2,7 +2,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     ./hardware-configuration.nix
   ];
@@ -14,7 +15,10 @@
   networking.hostName = "old-laptop";
   networking.networkmanager.enable = true;
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   time.timeZone = "Atlantic/Canary";
   i18n.defaultLocale = "en_GB.UTF-8";
@@ -37,6 +41,16 @@
   programs.niri.enable = true;
   console.keyMap = "es";
 
+  programs.dconf.enable = true;
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gnome
+      xdg-desktop-portal-gtk
+    ];
+  };
+
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -51,10 +65,20 @@
   security.polkit.enable = true;
   services.gnome.gnome-keyring.enable = true;
 
+  security.wrappers.brave-origin-chrome-sandbox = {
+    owner = "root";
+    group = "root";
+    setuid = true;
+    source = "${pkgs.brave-origin}/opt/brave.com/brave-origin/chrome-sandbox";
+  };
+
   users.users."ligarto" = {
     isNormalUser = true;
     description = "Ligarto";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -73,7 +97,7 @@
     };
   };
 
-  networking.firewall.allowedTCPPorts = [22];
+  networking.firewall.allowedTCPPorts = [ 22 ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
