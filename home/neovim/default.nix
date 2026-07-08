@@ -17,15 +17,14 @@
 
       statusline.lualine.enable = true;
       telescope.enable = true;
-      treesitter.enable = true;
 
+      treesitter.enable = true;
       lsp = {
         enable = true;
         formatOnSave = true;
       };
 
       languages = {
-        enableLSP = true;
         enableTreesitter = true;
 
         nix.enable = true;
@@ -35,6 +34,7 @@
 
       opts = {
         shiftwidth = 2;
+        cursorline = true;
       };
     };
   };

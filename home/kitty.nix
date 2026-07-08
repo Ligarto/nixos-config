@@ -13,7 +13,7 @@
       scrollback_lines = 10000;
       enable_audio_bell = false;
 
-      background_opacity = "0.75";
+      background_opacity = "0.65";
       window_padding_width = 8;
 
       cursor_shape = "beam";
