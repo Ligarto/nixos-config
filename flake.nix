@@ -18,23 +18,36 @@
       url = "github:noctalia-dev/noctalia-shell?ref=v4.7.5";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nvf = {
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, niri, noctalia, ... }: {
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    niri,
+    noctalia,
+    nvf,
+    ...
+  }: {
     nixosConfigurations.old-laptop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = { inherit niri noctalia; };
+      specialArgs = {inherit niri noctalia nvf;};
       modules = [
         ./configuration.nix
-	./programs.nix
+        ./programs.nix
         niri.nixosModules.niri
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = { inherit niri noctalia; };
+          home-manager.extraSpecialArgs = {inherit niri noctalia nvf;};
           home-manager.users.ligarto = import ./home/default.nix;
-	  home-manager.backupFileExtension = "bak";
+          home-manager.backupFileExtension = "bak";
         }
       ];
     };

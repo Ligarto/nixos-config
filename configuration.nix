@@ -1,14 +1,11 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
-
 {
-  imports =
-    [ 
-      ./hardware-configuration.nix
-    ];
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -17,7 +14,7 @@
   networking.hostName = "old-laptop";
   networking.networkmanager.enable = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   time.timeZone = "Atlantic/Canary";
   i18n.defaultLocale = "en_GB.UTF-8";
@@ -33,7 +30,7 @@
     LC_TIME = "es_ES.UTF-8";
   };
 
-  services.displayManager.sddm={
+  services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
   };
@@ -53,20 +50,19 @@
 
   security.polkit.enable = true;
   services.gnome.gnome-keyring.enable = true;
-  
+
   users.users."ligarto" = {
     isNormalUser = true;
     description = "Ligarto";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    extraGroups = ["networkmanager" "wheel"];
   };
-  
+
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-  git
-  neovim
-  kitty
+    git
+    #neovim
+    kitty
   ];
 
   services.openssh = {
@@ -77,7 +73,7 @@
     };
   };
 
-  networking.firewall.allowedTCPPorts = [ 22 ];
+  networking.firewall.allowedTCPPorts = [22];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -86,5 +82,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "26.05"; # Did you read the comment?
-
 }
