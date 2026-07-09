@@ -45,7 +45,10 @@
           ./browser-policies.nix
           {
             nixpkgs.overlays = [
-              (final: prev: { brave-origin = final.callPackage ./pkgs/brave-origin.nix { }; })
+              (final: prev: {
+                brave-origin = final.callPackage ./pkgs/brave-origin.nix { };
+                sddm-theme = final.callPackage ./pkgs/sddm-theme.nix { };
+              })
             ];
           }
           niri.nixosModules.niri

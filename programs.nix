@@ -6,5 +6,6 @@
     nerd-fonts.jetbrains-mono
     nautilus
     brave-origin
+    sddm-theme
   ];
 }

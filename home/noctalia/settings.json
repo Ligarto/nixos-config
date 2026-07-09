@@ -29,7 +29,6 @@
       "left": [
         {
           "colorizeSystemIcon": "none",
-          "colorizeSystemText": "none",
           "customIconPath": "",
           "enableColorization": false,
           "icon": "rocket",
@@ -139,7 +138,7 @@
         },
         {
           "deviceNativePath": "__default__",
-          "displayMode": "graphic-clean",
+          "displayMode": "graphic",
           "hideIfIdle": false,
           "hideIfNotDetected": true,
           "id": "Battery",
@@ -163,7 +162,6 @@
         {
           "colorizeDistroLogo": false,
           "colorizeSystemIcon": "none",
-          "colorizeSystemText": "none",
           "customIconPath": "",
           "enableColorization": false,
           "icon": "noctalia",
