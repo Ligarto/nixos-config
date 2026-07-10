@@ -14,6 +14,8 @@
     ./neovim
     ./kitty.nix
     ./theme.nix
+    ./shell.nix
+    ./starship.nix
   ];
 
   programs.home-manager.enable = true;

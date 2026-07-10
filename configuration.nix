@@ -103,6 +103,8 @@
       "wheel"
     ];
   };
+  programs.fish.enable = true;
+  users.users."ligarto".shell = pkgs.fish;
 
   nixpkgs.config.allowUnfree = true;
 

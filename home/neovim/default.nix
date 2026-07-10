@@ -36,6 +36,33 @@
         shiftwidth = 2;
         cursorline = true;
       };
+
+      keymaps = [
+        {
+          key = "<C-d>";
+          mode = "n";
+          silent = true;
+          action = "<C-d>zz";
+        }
+        {
+          key = "<C-u>";
+          mode = "n";
+          silent = true;
+          action = "<C-u>zz";
+        }
+        {
+          key = "n";
+          mode = "n";
+          silent = true;
+          action = "nzz";
+        }
+        {
+          key = "N";
+          mode = "n";
+          silent = true;
+          action = "Nzz";
+        }
+      ];
     };
   };
 }
