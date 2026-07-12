@@ -12,10 +12,13 @@
     ./niri
     ./noctalia
     ./neovim
+    ./discord
     ./kitty.nix
     ./theme.nix
     ./shell.nix
     ./starship.nix
+    ./easyeffects.nix
+    ./cursor.nix
   ];
 
   programs.home-manager.enable = true;

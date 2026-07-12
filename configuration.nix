@@ -71,7 +71,10 @@
     extraPortals = with pkgs; [
       xdg-desktop-portal-gnome
       xdg-desktop-portal-gtk
+      xdg-desktop-portal-wlr
     ];
+    xdgOpenUsePortal = true;
+    config.common.default = [ "wlr" ];
   };
 
   services.pulseaudio.enable = false;

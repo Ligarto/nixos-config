@@ -11,6 +11,8 @@
   dconf.settings."org/gnome/desktop/interface" = {
     color-scheme = "prefer-dark";
     gtk-theme = "rose-pine-gtk";
+    cursor-theme = "capitaine-cursors";
+    cursor-size = 24;
   };
 
   xdg.configFile."gtk-4.0/gtk.css".text = ''

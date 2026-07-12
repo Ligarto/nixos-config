@@ -23,6 +23,11 @@
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixcord = {
+      url = "github:FlameFlag/nixcord";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -33,12 +38,20 @@
       niri,
       noctalia,
       nvf,
+      nixcord,
       ...
     }:
     {
       nixosConfigurations.old-laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit niri noctalia nvf; };
+        specialArgs = {
+          inherit
+            niri
+            noctalia
+            nvf
+            nixcord
+            ;
+        };
         modules = [
           ./configuration.nix
           ./programs.nix
@@ -56,7 +69,14 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit niri noctalia nvf; };
+            home-manager.extraSpecialArgs = {
+              inherit
+                niri
+                noctalia
+                nvf
+                nixcord
+                ;
+            };
             home-manager.users.ligarto = import ./home/default.nix;
             home-manager.backupFileExtension = "bak";
           }

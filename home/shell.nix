@@ -5,7 +5,7 @@
     enable = true;
 
     shellAliases = {
-      ls = "ls -la";
+      ls = "eza -al --color=always --group-directories-first --icons";
       nrs = "sudo nixos-rebuild switch --flake ~/.nix-files#old-laptop";
     };
 
