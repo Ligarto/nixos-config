@@ -6,7 +6,8 @@
 
     shellAliases = {
       ls = "eza -al --color=always --group-directories-first --icons";
-      nrs = "sudo nixos-rebuild switch --flake ~/.nix-files#old-laptop";
+      nrs = "nh os switch ~/.nix-files";
+      nrsu = "nh os switch ~/.nix-files --update";
     };
 
     shellAbbrs = {

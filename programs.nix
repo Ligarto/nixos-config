@@ -9,6 +9,7 @@
     brave-origin
     sddm-theme
     eza
+    nh
     protonup-ng
     lutris
     pavucontrol
