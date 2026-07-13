@@ -98,13 +98,36 @@ stdenv.mkDerivation rec {
   dontBuild = true;
 
   installPhase = ''
-    runHook preInstall
-    mkdir -p $out
-    cp -r opt usr $out/
-    mkdir -p $out/bin
-    makeWrapper $out/opt/brave.com/brave-origin/brave-origin $out/bin/brave-origin \
-      --set CHROME_DEVEL_SANDBOX /run/wrappers/bin/brave-origin-chrome-sandbox
-    runHook postInstall
+      runHook preInstall
+      mkdir -p $out
+      cp -r opt usr $out/
+      mkdir -p $out/bin
+      makeWrapper $out/opt/brave.com/brave-origin/brave-origin $out/bin/brave-origin \
+        --set CHROME_DEVEL_SANDBOX /run/wrappers/bin/brave-origin-chrome-sandbox
+
+      mkdir -p $out/share/applications
+      cat > $out/share/applications/brave-origin.desktop <<EOF
+    [Desktop Entry]
+    Version=1.0
+    Name=Brave Origin
+    GenericName=Web Browser
+    Comment=Minimalist, privacy-focused edition of Brave
+    Exec=$out/bin/brave-origin %U
+    Terminal=false
+    Icon=brave-origin
+    Type=Application
+    MimeType=text/html;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/about;x-scheme-handler/unknown;
+    Categories=Network;WebBrowser;
+    StartupWMClass=brave-origin
+    EOF
+
+      for size in 16 24 32 48 64 128 256; do
+        mkdir -p $out/share/icons/hicolor/''${size}x''${size}/apps
+        install -Dm444 opt/brave.com/brave-origin/product_logo_''${size}.png \
+          $out/share/icons/hicolor/''${size}x''${size}/apps/brave-origin.png
+      done
+
+      runHook postInstall
   '';
 
   meta = with lib; {

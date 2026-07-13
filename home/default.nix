@@ -19,6 +19,7 @@
     ./starship.nix
     ./easyeffects.nix
     ./cursor.nix
+    ./default-apps.nix
   ];
 
   programs.home-manager.enable = true;
