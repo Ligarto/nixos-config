@@ -1,9 +1,13 @@
 { nvf, ... }: {
-  imports = [ nvf.homeManagerModules.default ];
+  imports = [
+    nvf.homeManagerModules.default
+    ./keymaps.nix
+    ./opts.nix
+  ];
 
   programs.nvf = {
     enable = true;
-    enableManpages = true; # gives you `man 5 nvf` for the full option reference, in your terminal
+    enableManpages = true;
 
     settings.vim = {
       viAlias = true;
@@ -17,6 +21,7 @@
 
       statusline.lualine.enable = true;
       telescope.enable = true;
+      binds.whichKey.enable = true;
 
       treesitter.enable = true;
       lsp = {
@@ -26,43 +31,11 @@
 
       languages = {
         enableTreesitter = true;
-
+        #Languages here:
         nix.enable = true;
       };
 
       autocomplete.nvim-cmp.enable = true;
-
-      opts = {
-        shiftwidth = 2;
-        cursorline = true;
-      };
-
-      keymaps = [
-        {
-          key = "<C-d>";
-          mode = "n";
-          silent = true;
-          action = "<C-d>zz";
-        }
-        {
-          key = "<C-u>";
-          mode = "n";
-          silent = true;
-          action = "<C-u>zz";
-        }
-        {
-          key = "n";
-          mode = "n";
-          silent = true;
-          action = "nzz";
-        }
-        {
-          key = "N";
-          mode = "n";
-          silent = true;
-          action = "Nzz";
-        }
-      ];
     };
   };
 }
