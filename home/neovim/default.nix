@@ -3,6 +3,7 @@
     nvf.homeManagerModules.default
     ./keymaps.nix
     ./opts.nix
+    ./harpoon.nix
   ];
 
   programs.nvf = {
@@ -22,6 +23,7 @@
       statusline.lualine.enable = true;
       telescope.enable = true;
       binds.whichKey.enable = true;
+      utility.undotree.enable = true;
 
       treesitter.enable = true;
       lsp = {
@@ -36,6 +38,11 @@
       };
 
       autocomplete.nvim-cmp.enable = true;
+
+      undoFile = {
+        enable = true;
+        path = "~/.vim/undodir";
+      };
     };
   };
 }
