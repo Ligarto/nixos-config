@@ -13,6 +13,7 @@
     ./noctalia
     ./neovim
     ./discord
+    ./scripts
     ./kitty.nix
     ./theme.nix
     ./shell.nix
@@ -20,6 +21,7 @@
     ./easyeffects.nix
     ./cursor.nix
     ./default-apps.nix
+    ./fuzzel.nix
   ];
 
   programs.home-manager.enable = true;

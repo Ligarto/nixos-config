@@ -13,7 +13,15 @@
     protonup-ng
     lutris
     pavucontrol
-    prismlauncher-unwrapped
+    devenv
+    (prismlauncher.override {
+      jdks = [
+        jdk21
+        jdk17
+        jdk8
+      ];
+    })
+    fuzzel
   ];
 
   hardware.graphics = {

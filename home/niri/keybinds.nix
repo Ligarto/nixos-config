@@ -3,7 +3,7 @@
   programs.niri.settings.binds = with config.lib.niri.actions; {
     "Mod+T".action = spawn "kitty";
     "Mod+D".action = spawn-sh "noctalia-shell ipc call launcher toggle";
-    "Mod+B".action = spawn-sh "brave-origin & disown";
+    "Mod+B".action = spawn "web-bookmarks";
     "Mod+E".action = spawn "nautilus";
 
     "XF86AudioRaiseVolume" = {

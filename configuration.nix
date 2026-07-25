@@ -62,6 +62,7 @@
   };
 
   programs.niri.enable = true;
+  # systemd.user.services.niri.enableDefaultPath = false;
   console.keyMap = "es";
 
   programs.dconf.enable = true;

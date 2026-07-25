@@ -35,6 +35,7 @@
         enableTreesitter = true;
         #Languages here:
         nix.enable = true;
+        clang.enable = true;
       };
 
       autocomplete.nvim-cmp.enable = true;
