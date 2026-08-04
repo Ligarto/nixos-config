@@ -22,6 +22,7 @@
       ];
     })
     fuzzel
+    texlive.combined.scheme-medium
   ];
 
   hardware.graphics = {

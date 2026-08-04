@@ -4,6 +4,7 @@
     ./keymaps.nix
     ./opts.nix
     ./harpoon.nix
+    ./latex.nix
   ];
 
   programs.nvf = {

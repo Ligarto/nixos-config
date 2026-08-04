@@ -22,6 +22,7 @@
     ./cursor.nix
     ./default-apps.nix
     ./fuzzel.nix
+    ./zathura.nix
   ];
 
   programs.home-manager.enable = true;
