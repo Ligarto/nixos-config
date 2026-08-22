@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-old.url = "github:nixos/nixpkgs/d407951447dcd00442e97087bf374aad70c04cea";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -34,6 +35,7 @@
     {
       self,
       nixpkgs,
+      nixpkgs-old,
       home-manager,
       niri,
       noctalia,
@@ -58,10 +60,20 @@
           ./browser-policies.nix
           {
             nixpkgs.overlays = [
-              (final: prev: {
-                brave-origin = final.callPackage ./pkgs/brave-origin.nix { };
-                sddm-theme = final.callPackage ./pkgs/sddm-theme.nix { };
-              })
+              (
+                final: prev:
+                let
+                  oldPkgs = import nixpkgs-old {
+                    inherit (prev) system;
+                    config.allowUnfree = true;
+                  };
+                in
+                {
+                  brave-origin = final.callPackage ./pkgs/brave-origin.nix { };
+                  sddm-theme = final.callPackage ./pkgs/sddm-theme.nix { };
+                  libdisplay-info_0_2 = oldPkgs.libdisplay-info_0_2; # exact old version niri's build script requires
+                }
+              )
             ];
           }
           niri.nixosModules.niri

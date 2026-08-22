@@ -3,8 +3,8 @@
   gtk = {
     enable = true;
     theme = {
-      name = "rose-pine-gtk";
-      package = pkgs.rose-pine-gtk-theme;
+      name = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
     };
     iconTheme = {
       name = "Papirus-Dark";
@@ -14,24 +14,24 @@
 
   dconf.settings."org/gnome/desktop/interface" = {
     color-scheme = "prefer-dark";
-    gtk-theme = "rose-pine-gtk";
+    gtk-theme = "Adwaita-dark";
     cursor-theme = "capitaine-cursors";
     cursor-size = 24;
     icon-theme = "Papirus-Dark";
   };
 
-  qt = {
-    enable = true;
-    platformTheme.name = "qtct";
-    style = {
-      name = "adwaita-dark";
-      package = pkgs.adwaita-qt;
-    };
-  };
-
-  # home.sessionVariables = {
-  #   QT_QPA_PLATFORMTHEME = "qt6ct";
-  # };
+  xdg.configFile."gtk-3.0/gtk.css".text = ''
+    @define-color theme_bg_color #191724;
+    @define-color theme_fg_color #e0def4;
+    @define-color theme_base_color #1f1d2e;
+    @define-color theme_selected_bg_color #c4a7e7;
+    @define-color theme_selected_fg_color #191724;
+    @define-color theme_text_color #e0def4;
+    @define-color borders #403d52;
+    @define-color warning_color #f6c177;
+    @define-color error_color #eb6f92;
+    @define-color success_color #9ccfd8;
+  '';
 
   xdg.configFile."gtk-4.0/gtk.css".text = ''
     @define-color window_bg_color #191724;

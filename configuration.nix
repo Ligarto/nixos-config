@@ -92,6 +92,9 @@
   security.polkit.enable = true;
   services.gnome.gnome-keyring.enable = true;
 
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+
   security.wrappers.brave-origin-chrome-sandbox = {
     owner = "root";
     group = "root";

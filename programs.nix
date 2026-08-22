@@ -23,6 +23,8 @@
     })
     fuzzel
     texlive.combined.scheme-medium
+    android-tools
+    kdePackages.dolphin
   ];
 
   hardware.graphics = {

@@ -28,7 +28,7 @@
         decor.enable = true;
         disableCallIdle.enable = true;
         favoriteEmojiFirst.enable = true;
-        favoriteGifSearch.enable = true;
+        ##      favoriteGifSearch.enable = true;
         fixImagesQuality.enable = true;
         fixYoutubeEmbeds.enable = true;
         friendInvites.enable = true;

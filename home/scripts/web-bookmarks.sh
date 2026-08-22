@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # home/scripts/web-bookmarks.sh
 declare -A bookmarks=(
+  ["-"]=""
   ["GitHub"]="https://github.com/Ligarto"
   ["YouTube"]="https://youtube.com"
   ["NixOS Search"]="https://search.nixos.org/packages"
@@ -10,6 +11,7 @@ declare -A bookmarks=(
   ["My NixOS"]="https://mynixos.com/"
   ["Devenv Docs"]="https://devenv.sh/"
   ["Raylib Docs"]="https://www.raylib.com/"
+  ["WhatsApp"]="https://web.whatsapp.com/"
 )
 
 selected=$(printf '%s\n' "${!bookmarks[@]}" | sort | fuzzel --dmenu --prompt="Search: ")

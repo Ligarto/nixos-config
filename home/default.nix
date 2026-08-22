@@ -23,6 +23,7 @@
     ./default-apps.nix
     ./fuzzel.nix
     ./zathura.nix
+    ./yt-dlp.nix
   ];
 
   programs.home-manager.enable = true;
