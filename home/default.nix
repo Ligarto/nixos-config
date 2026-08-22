@@ -14,11 +14,11 @@
     ./neovim
     ./discord
     ./scripts
+    ./easyeffects
     ./kitty.nix
     ./theme.nix
     ./shell.nix
     ./starship.nix
-    ./easyeffects.nix
     ./cursor.nix
     ./default-apps.nix
     ./fuzzel.nix
