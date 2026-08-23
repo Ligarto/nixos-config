@@ -14,6 +14,18 @@
 
       directory.style = "bold #ebbcba"; # rose
 
+      username = {
+        format = "[$user]($style) ";
+        style_user = "bold #c4a7e7";
+        show_always = true;
+      };
+
+      hostname = {
+        format = "[@$hostname]($style) ";
+        style = "bold #9ccfd8";
+        ssh_only = false;
+      };
+
       character = {
         success_symbol = "[❯](bold #c4a7e7)"; # iris
         error_symbol = "[❯](bold #eb6f92)"; # love

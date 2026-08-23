@@ -1,18 +1,87 @@
 # home/niri/style.nix — layout, input, outputs
-{ ... }:
+{ hostName, ... }:
 {
   programs.niri.settings = {
     prefer-no-csd = true;
     input = {
-      keyboard.xkb = { layout = "es"; variant = "ast"; };
-      touchpad = { tap = true; natural-scroll = true; };
+      keyboard.xkb = {
+        layout = "es";
+        variant = "ast";
+      };
+      touchpad = {
+        tap = true;
+        natural-scroll = true;
+      };
     };
-    outputs."eDP-1".scale = 1.0;
+
+    outputs =
+      if hostName == "gaia" then
+        {
+          "eDP-1" = {
+            scale = 1.0;
+            mode = {
+              width = 1366;
+              height = 768;
+              refresh = 60.059;
+            };
+            position = {
+              x = 0;
+              y = 0;
+            };
+          };
+          "HDMI-A-1" = {
+            scale = 1.0;
+            mode = {
+              width = 1920;
+              height = 1080;
+              refresh = 60.000;
+            };
+            position = {
+              x = 0;
+              y = -768;
+            };
+          };
+        }
+      else if hostName == "chaos" then
+        {
+          "eDP-1" = {
+            scale = 1.0;
+            mode = {
+              width = 1920;
+              height = 1200;
+              refresh = 165.000;
+            };
+            position = {
+              x = 0;
+              y = 0;
+            };
+          };
+          "HDMI-A-1" = {
+            scale = 1.0;
+            mode = {
+              width = 1920;
+              height = 1080;
+              refresh = 60.000;
+            };
+            position = {
+              x = 0;
+              y = -1200;
+            };
+          };
+        }
+      else
+        { "eDP-1".scale = 1.0; };
+
     layout = {
       gaps = 5;
       center-focused-column = "never";
-      focus-ring = { enable = true; width = 2; };
-      default-column-width = { proportion = 0.5; };
+      focus-ring = {
+        enable = true;
+        width = 2;
+      };
+      default-column-width = {
+        proportion = 0.5;
+      };
     };
   };
 }
