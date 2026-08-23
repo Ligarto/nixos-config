@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # home/scripts/web-bookmarks.sh
 declare -A bookmarks=(
-  ["-"]=""
+  ["-"]="https://search.brave.com/"
   ["GitHub"]="https://github.com/Ligarto"
   ["YouTube"]="https://youtube.com"
   ["NixOS Search"]="https://search.nixos.org/packages"

@@ -22,7 +22,7 @@
       ];
     })
     fuzzel
-    texlive.combined.scheme-medium
+    texliveSmall
     android-tools
     kdePackages.dolphin
   ];
@@ -35,4 +35,6 @@
   programs.steam.enable = true;
   programs.steam.gamescopeSession.enable = true;
   programs.gamemode.enable = true;
+
+  programs.obs-studio.enable = true;
 }
