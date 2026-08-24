@@ -25,6 +25,9 @@
     texliveSmall
     android-tools
     kdePackages.dolphin
+    unzip
+    jq
+    python3
   ];
 
   hardware.graphics = {
