@@ -1,4 +1,3 @@
-# home/discord/default.nix
 { nixcord, ... }:
 {
   imports = [ nixcord.homeModules.nixcord ];
@@ -6,7 +5,9 @@
   programs.nixcord = {
     enable = true;
 
-    discord.vencord.enable = true;
+    # Disable standard Discord + Vencord, enable Vesktop instead
+    discord.enable = false;
+    vesktop.enable = true;
 
     config = {
       useQuickCss = true;
@@ -28,7 +29,7 @@
         decor.enable = true;
         disableCallIdle.enable = true;
         favoriteEmojiFirst.enable = true;
-        ##      favoriteGifSearch.enable = true;
+        ##          favoriteGifSearch.enable = true;
         fixImagesQuality.enable = true;
         fixYoutubeEmbeds.enable = true;
         friendInvites.enable = true;

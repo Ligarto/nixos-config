@@ -70,7 +70,11 @@
       xdg-desktop-portal-wlr
     ];
     xdgOpenUsePortal = true;
-    config.common.default = [ "wlr" ];
+    config.common.default = [
+      "gnome"
+      "gtk"
+      "wlr"
+    ];
   };
 
   services.pulseaudio.enable = false;

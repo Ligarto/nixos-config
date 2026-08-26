@@ -28,10 +28,8 @@
         input = "e0def4ff"; # text
         counter = "908caaff"; # subtle
       };
-
       border = {
         width = 2;
-        radius = 10;
       };
     };
   };

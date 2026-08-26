@@ -12,6 +12,8 @@
         tap = true;
         natural-scroll = true;
       };
+      focus-follows-mouse.enable = true;
+      focus-follows-mouse.max-scroll-amount = "80%";
     };
 
     outputs =
@@ -65,7 +67,7 @@
             };
             position = {
               x = 0;
-              y = -1200;
+              y = -1080;
             };
           };
         }
