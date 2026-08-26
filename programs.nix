@@ -16,9 +16,10 @@
     devenv
     (prismlauncher.override {
       jdks = [
-        jdk21
-        jdk17
-        jdk8
+        temurin-bin-25
+        temurin-bin-21
+        temurin-bin-17
+        temurin-bin-8
       ];
     })
     fuzzel
@@ -28,6 +29,7 @@
     unzip
     jq
     python3
+    ydotool
   ];
 
   hardware.graphics = {

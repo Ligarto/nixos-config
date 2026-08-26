@@ -107,6 +107,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "input"
     ];
   };
   programs.fish.enable = true;
