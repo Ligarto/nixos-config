@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # home/scripts/web-bookmarks.sh
 declare -A bookmarks=(
-  ["-"]="https://search.brave.com/"
+  ["-"]=""
   ["GitHub"]="https://github.com/Ligarto"
   ["YouTube"]="https://youtube.com"
   ["NixOS Search"]="https://search.nixos.org/packages"
@@ -12,6 +12,8 @@ declare -A bookmarks=(
   ["Devenv Docs"]="https://devenv.sh/"
   ["Raylib Docs"]="https://www.raylib.com/"
   ["WhatsApp"]="https://web.whatsapp.com/"
+  ["GMail"]="https://mail.google.com/mail/u/0/#inbox"
+  ["Campus Virtual ULL"]="https://campusvirtual.ull.es/2627/ingenieriaytecnologia/my/"
 )
 
 selected=$(printf '%s\n' "${!bookmarks[@]}" | sort | fuzzel --dmenu --prompt="Search: ")

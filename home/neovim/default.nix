@@ -5,6 +5,7 @@
     ./opts.nix
     ./harpoon.nix
     ./latex.nix
+    ./neorg.nix
   ];
 
   programs.nvf = {

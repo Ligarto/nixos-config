@@ -108,9 +108,12 @@
       "networkmanager"
       "wheel"
       "input"
+      "ydotool"
     ];
   };
   programs.fish.enable = true;
+  # environment.variables.YDOTOOL_SOCKET = "/tmp/.ydotool_socket";
+  programs.ydotool.enable = true;
   users.users."ligarto".shell = pkgs.fish;
 
   nixpkgs.config.allowUnfree = true;

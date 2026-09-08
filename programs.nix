@@ -28,7 +28,7 @@
     kdePackages.dolphin
     unzip
     jq
-    python3
+    (python3.withPackages (ps: with ps; [ evdev ]))
     ydotool
   ];
 
