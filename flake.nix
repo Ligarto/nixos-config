@@ -1,5 +1,6 @@
 {
   description = "NixOS configuration";
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-old.url = "github:nixos/nixpkgs/d407951447dcd00442e97087bf374aad70c04cea";
@@ -24,6 +25,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
+
   outputs =
     {
       self,
@@ -53,6 +55,7 @@
             ./configuration.nix
             ./programs.nix
             ./browser-policies.nix
+            ./openfortivpn.nix
             ./hosts/${hostname}/hardware-configuration.nix
             { networking.hostName = hostname; }
             {

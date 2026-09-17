@@ -23,13 +23,17 @@
       ];
     })
     fuzzel
-    texliveSmall
+    texlab
+    (texlive.combine {
+      inherit (texlive) scheme-small latexmk;
+    })
     android-tools
     kdePackages.dolphin
     unzip
     jq
     (python3.withPackages (ps: with ps; [ evdev ]))
     ydotool
+    steam-run
   ];
 
   hardware.graphics = {

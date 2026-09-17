@@ -109,18 +109,21 @@
       "wheel"
       "input"
       "ydotool"
+      "libvirtd"
     ];
   };
   programs.fish.enable = true;
-  # environment.variables.YDOTOOL_SOCKET = "/tmp/.ydotool_socket";
   programs.ydotool.enable = true;
   users.users."ligarto".shell = pkgs.fish;
+
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
     git
-    #neovim
+    vis
     kitty
   ];
 

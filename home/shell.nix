@@ -8,6 +8,7 @@
       ls = "eza -la --color=always --group-directories-first --icons";
       nrs = "nh os switch ~/.nix-files";
       nrsu = "nh os switch ~/.nix-files --update";
+      susp = "systemctl suspend";
     };
 
     shellAbbrs = {

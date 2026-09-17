@@ -4,13 +4,9 @@
   programs.niri.settings = {
     prefer-no-csd = true;
     input = {
-      keyboard = {
-        repeat-rate = 35;
-        repeat-delay = 200;
-        xkb = {
-          layout = "es";
-          variant = "ast";
-        };
+      keyboard.xkb = {
+        layout = "es";
+        variant = "ast";
       };
       touchpad = {
         tap = true;
@@ -19,6 +15,8 @@
       focus-follows-mouse.enable = true;
       focus-follows-mouse.max-scroll-amount = "80%";
 
+      repeat-rate = 35;
+      repeat-delay = 200;
     };
 
     outputs =

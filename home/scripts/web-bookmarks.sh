@@ -14,6 +14,7 @@ declare -A bookmarks=(
   ["WhatsApp"]="https://web.whatsapp.com/"
   ["GMail"]="https://mail.google.com/mail/u/0/#inbox"
   ["Campus Virtual ULL"]="https://campusvirtual.ull.es/2627/ingenieriaytecnologia/my/"
+  ["Drive"]="https://drive.google.com/drive/u/2/home"
 )
 
 selected=$(printf '%s\n' "${!bookmarks[@]}" | sort | fuzzel --dmenu --prompt="Search: ")
