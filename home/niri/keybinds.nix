@@ -4,6 +4,7 @@
     with config.lib.niri.actions;
     {
       "Mod+T".action = spawn "kitty";
+      "Mod+Shift+T".action = spawn "alacritty";
       "Mod+D".action = spawn-sh "noctalia-shell ipc call launcher toggle";
       "Mod+B".action = spawn "web-bookmarks";
       "Mod+E".action = spawn "nautilus";

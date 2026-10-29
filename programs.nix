@@ -24,9 +24,7 @@
     })
     fuzzel
     texlab
-    (texlive.combine {
-      inherit (texlive) scheme-small latexmk;
-    })
+    texliveMedium
     android-tools
     kdePackages.dolphin
     unzip
@@ -34,6 +32,9 @@
     (python3.withPackages (ps: with ps; [ evdev ]))
     ydotool
     steam-run
+    drawy
+    gcc
+    clang
   ];
 
   hardware.graphics = {

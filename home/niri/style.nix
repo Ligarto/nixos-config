@@ -16,6 +16,10 @@
         tap = true;
         natural-scroll = true;
       };
+      mouse = {
+        #       accel-profile = "flat";
+        #       accel-speed = 0.0;
+      };
       focus-follows-mouse.enable = true;
       focus-follows-mouse.max-scroll-amount = "80%";
 

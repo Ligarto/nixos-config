@@ -84,5 +84,13 @@
       silent = true;
       action = "\"_d";
     }
+
+    #Yank into clipboard
+    {
+      key = "<leader>y";
+      mode = "v";
+      silent = true;
+      action = "\"+y";
+    }
   ];
 }

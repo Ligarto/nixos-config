@@ -13,8 +13,6 @@
     enableManpages = true;
 
     settings.vim = {
-      viAlias = true;
-      vimAlias = true;
 
       theme = {
         enable = true;

@@ -9,6 +9,7 @@
       nrs = "nh os switch ~/.nix-files";
       nrsu = "nh os switch ~/.nix-files --update";
       susp = "systemctl suspend";
+      ull-vpn = "sudo openfortivpn vpn.ull.es:443 --realm=PORTAL-ULL -u alu0101910284";
     };
 
     shellAbbrs = {

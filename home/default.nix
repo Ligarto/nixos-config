@@ -16,6 +16,7 @@
     ./scripts
     ./easyeffects
     ./kitty.nix
+    ./alacritty.nix
     ./theme.nix
     ./shell.nix
     ./starship.nix
@@ -24,6 +25,7 @@
     ./fuzzel.nix
     ./zathura.nix
     ./yt-dlp.nix
+    ./rmpc.nix
   ];
 
   programs.home-manager.enable = true;
